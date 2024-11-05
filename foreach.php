@@ -1,5 +1,39 @@
 <?php
 
+function exibeMensagem($mensagem)
+{
+    echo $mensagem. PHP_EOL;
+};
+
+
+function sacar($conta,$valorSacar)
+{
+
+    if($valorSacar > $conta['saldo']){
+        exibeMensagem("Você não pode sacar");
+    }
+    else {
+        $conta['saldo'] -=20;
+    }
+
+    return $conta;
+
+}
+
+function depositar($conta,$valorDepositar)
+{
+    
+    if($valorDepositar > 0){
+        $conta['saldo'] += $valorDepositar;
+        return $conta;
+    }
+    else{
+        exibeMensagem("Você não pode sacar");
+    }
+
+}
+
+
 $contasCorrentes = [
 
     '472.769.808-04' => [
@@ -29,12 +63,9 @@ $contasCorrentes = [
 
 ];
 
-if(300 > $contasCorrentes['507.649.688-58']['saldo']){
-    echo $contasCorrentes['507.649.688-58']['titular'] . "você não pode sacar um valor maior do que ". $contasCorrentes['saldo'] .PHP_EOL;
-}
-else {
-    $contasCorrentes['507.649.688-58']['saldo'] -=20;
-}
+// Aqui estou mexendo no Array original, pois atribui o retorno da função para o CPF do Array
+$contasCorrentes['507.649.688-58'] = sacar($contasCorrentes['507.649.688-58'],valorSacar: 20);
+$contasCorrentes['472.769.808-04'] = depositar($contasCorrentes['472.769.808-04'],20);
 
 foreach($contasCorrentes as $cpf => $conta){
 
