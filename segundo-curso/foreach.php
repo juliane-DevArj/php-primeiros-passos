@@ -1,38 +1,9 @@
 <?php
 
-function exibeMensagem($mensagem)
-{
-    echo $mensagem. PHP_EOL;
-};
-
-
-function sacar($conta,$valorSacar)
-{
-
-    if($valorSacar > $conta['saldo']){
-        exibeMensagem("Você não pode sacar");
-    }
-    else {
-        $conta['saldo'] -=20;
-    }
-
-    return $conta;
-
-}
-
-function depositar($conta,$valorDepositar)
-{
-    
-    if($valorDepositar > 0){
-        $conta['saldo'] += $valorDepositar;
-        return $conta;
-    }
-    else{
-        exibeMensagem("Você não pode sacar");
-    }
-
-}
-
+// Ele vai colocar o arquivo de funções como obrigatório! E APENAS UMA UNICA VEZ
+// DEIXE COMO OBRIGATÓRIO, MAS APENAS UMA VEZ O ARQUIVO DE FUNÇÕES!!
+// REQUIRE + ONCE => TRAGA COMO OBRIGATÓRIO APENAS UMA VEZ!
+require_once 'funcoes.php';
 
 $contasCorrentes = [
 
@@ -69,6 +40,8 @@ $contasCorrentes['472.769.808-04'] = depositar($contasCorrentes['472.769.808-04'
 
 foreach($contasCorrentes as $cpf => $conta){
 
-    echo $cpf ." ".$conta['titular']." ".$conta['saldo']. PHP_EOL;
+   exibeMensagem(
+    "$cpf {$conta['titular']} {$conta['saldo']} "
+    ) ;
 
 };
