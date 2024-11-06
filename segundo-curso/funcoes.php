@@ -1,12 +1,12 @@
 <?php
 
-function exibeMensagem($mensagem)
+function exibeMensagem(string $mensagem)
 {
-    echo $mensagem. PHP_EOL;
-};
+    echo $mensagem. '<br>';
+}
 
 
-function sacar($conta,$valorSacar)
+function sacar(array $conta, float $valorSacar):array
 {
 
     if($valorSacar > $conta['saldo']){
@@ -20,8 +20,9 @@ function sacar($conta,$valorSacar)
 
 }
 
-function depositar($conta,$valorDepositar)
+function depositar(array $conta, float $valorDepositar)
 {
+    // Nem sempre essa função vai retorna um array
     
     if($valorDepositar > 0){
         $conta['saldo'] += $valorDepositar;
@@ -29,6 +30,23 @@ function depositar($conta,$valorDepositar)
     }
     else{
         exibeMensagem("Você não pode sacar");
+        // Com esse else o retorno da função se torna VOID (vazio)
     }
 
 }   
+
+function titularComLetrasMaiusculas(array &$conta)
+{
+    $conta['titular'] = mb_strtoupper($conta['titular']);
+}
+
+function exibeConta(array $conta)
+{
+    // Essa é a sintaxe do list 
+    ['titular' => $titular, 'saldo' => $saldo] = $conta;
+
+    echo "<li>
+        Titular: $titular. 
+        Saldo : $saldo
+    </li>"; 
+}
