@@ -47,8 +47,8 @@ echo "Troca de instrução".PHP_EOL;
 // Agora vou transformar o nome em VALUE
 // E vou transformar a nota em INDEX
 
-$nomesAlunos = array_keys($nomesAlunos);
-$notasAlunos = array_values($notasAlunos);
+$nomesAlunos = array_keys($alunosFaltantes);
+$notasAlunos = array_values($alunosFaltantes);
 
 var_dump(array_combine($notasAlunos, $nomesAlunos));
 echo "Fim de instrução".PHP_EOL;
