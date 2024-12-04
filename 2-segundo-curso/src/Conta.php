@@ -3,9 +3,9 @@
 class Conta{
 
     // Atributo de uma conta
-    public string $cpfTitular = "";
-    public string $nomeTitular = "";
-    public float $saldo = 0;
+    private string $cpfTitular = "";
+    private string $nomeTitular = "";
+    private float $saldo = 0;
     
 
     //Método de uma conta
@@ -34,7 +34,7 @@ class Conta{
 
     public function transferir($valoraTransferir, Conta $contaDestino):void
     {
-        if($valoraTransferir < $this->saldo){
+        if($valoraTransferir > $this->saldo){
             echo "Saldo indisponível";
             return;
         }
@@ -43,5 +43,27 @@ class Conta{
         $contaDestino->depositar($valoraTransferir);
         
     }
+ 
+    public function defineCpfTitular($cpf):void
+    {
+        $this->cpfTitular = $cpf;
+    }
+
+
+    public function defineNomeTitular($nome):void
+    {
+        $this->nomeTitular = $nome;
+    }
+
+    public function recuperaCpfTitular():string
+    {
+       return $this->cpfTitular;
+    }
+
     
+    public function recuperaNomeTitular():string
+    {
+       return $this->nomeTitular;
+    }
+
 }
