@@ -3,12 +3,20 @@
 class Conta{
 
     // Atributo de uma conta
-    private string $cpfTitular = "";
-    private string $nomeTitular = "";
-    private float $saldo = 0;
+    private string $cpfTitular;
+    private string $nomeTitular;
+    private float $saldo;
     
 
     //Método de uma conta
+    public function __construct(string $cpfNovoCadastro,string $nomeNovoCadastro)
+    {
+        // Fazendo a inicialização dos atributos dentro do método construtor do PHP
+        $this->cpfTitular = $cpfNovoCadastro;
+        $this->nomeTitular = $nomeNovoCadastro;
+        $this->saldo = 0;
+    }
+
     public function sacar($valoraSacar): void
     {
         if($valoraSacar > $this->saldo){
@@ -44,26 +52,17 @@ class Conta{
         
     }
  
-    public function defineCpfTitular($cpf):void
-    {
-        $this->cpfTitular = $cpf;
-    }
-
-
-    public function defineNomeTitular($nome):void
-    {
-        $this->nomeTitular = $nome;
-    }
-
-    public function recuperaCpfTitular():string
+    public function getCpfTitular():string
     {
        return $this->cpfTitular;
     }
 
     
-    public function recuperaNomeTitular():string
+    public function getNomeTitular():string
     {
        return $this->nomeTitular;
     }
+
+    // Regra de código: Todos os métodos são definidos com verbos no infinitivo.
 
 }
