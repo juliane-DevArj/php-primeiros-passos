@@ -13,6 +13,7 @@ class Conta{
     {
         // Fazendo a inicialização dos atributos dentro do método construtor do PHP
         $this->cpfTitular = $cpfNovoCadastro;
+        $this->validarNomeTitular($nomeNovoCadastro);
         $this->nomeTitular = $nomeNovoCadastro;
         $this->saldo = 0;
     }
@@ -64,5 +65,15 @@ class Conta{
     }
 
     // Regra de código: Todos os métodos são definidos com verbos no infinitivo.
+
+    // Função interna, então é um método privado!! 
+
+    private function validarNomeTitular($nomeNovoCadastro)
+    {
+        if(strlen($nomeNovoCadastro) < 5){
+            echo "O nome precisa de pelo menos 5 caracteres.".PHP_EOL;
+            exit;
+        }
+    }
 
 }
