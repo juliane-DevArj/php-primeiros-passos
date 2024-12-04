@@ -2,13 +2,13 @@
 
 class Conta{
 
-    // Atributo de uma conta
+    // Atributos de uma conta
     private string $cpfTitular;
     private string $nomeTitular;
     private float $saldo;
     
 
-    //Método de uma conta
+    //Métodos de uma conta
     public function __construct(string $cpfNovoCadastro,string $nomeNovoCadastro)
     {
         // Fazendo a inicialização dos atributos dentro do método construtor do PHP
