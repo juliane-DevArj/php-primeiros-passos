@@ -2,10 +2,12 @@
 
 class Conta{
 
-    // Atributos de uma conta
+    // Atributos de uma conta (objeto)
     private string $cpfTitular;
     private string $nomeTitular;
     private float $saldo;
+    //Atributo da Classe
+    //private static int $quantidadeContasClasse = 0;
     
 
     //Métodos de uma conta
@@ -16,6 +18,8 @@ class Conta{
         $this->validarNomeTitular($nomeNovoCadastro);
         $this->nomeTitular = $nomeNovoCadastro;
         $this->saldo = 0;
+
+      //  self::$quantidadeContasClasse++;
     }
 
     public function sacar($valoraSacar): void
@@ -71,9 +75,14 @@ class Conta{
     private function validarNomeTitular($nomeNovoCadastro)
     {
         if(strlen($nomeNovoCadastro) < 5){
-            echo "O nome precisa de pelo menos 5 caracteres.".PHP_EOL;
+            echo "O nome do novo Titular precisa de pelo menos 5 caracteres.".PHP_EOL;
             exit;
         }
     }
+
+  //  public static function getquantidadeContasClasse():int
+ //   {
+  //      return self::$quantidadeContasClasse;
+ //   }
 
 }
