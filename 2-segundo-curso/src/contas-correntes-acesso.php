@@ -25,4 +25,3 @@ echo "Nome do titular da segunda conta ".$contaGabi->getNome().PHP_EOL;
 echo "Cpf do titular da primeira conta ".$contaJu->getCpf().PHP_EOL;
 echo "Cpf do titular da segunda conta ".$contaGabi->getCpf().PHP_EOL; 
 
-//echo "Quantidade de objetos Conta criados". Conta::$getquantidadeContasClasse().PHP_EOL;
