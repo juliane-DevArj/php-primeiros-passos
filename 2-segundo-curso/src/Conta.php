@@ -1,22 +1,21 @@
 <?php
 
+require_once 'Titular.php';
+require_once 'Endereco.php';
+
 class Conta{
 
     // Atributos de uma conta (objeto)
-    private string $cpfTitular;
-    private string $nomeTitular;
+    private Titular $titular;
     private float $saldo;
     //Atributo da Classe
-    //private static int $quantidadeContasClasse = 0;
     
 
     //Métodos de uma conta
-    public function __construct(string $cpfNovoCadastro,string $nomeNovoCadastro)
+    public function __construct(Titular $titular)
     {
         // Fazendo a inicialização dos atributos dentro do método construtor do PHP
-        $this->cpfTitular = $cpfNovoCadastro;
-        $this->validarNomeTitular($nomeNovoCadastro);
-        $this->nomeTitular = $nomeNovoCadastro;
+        $this->titular = $titular;
         $this->saldo = 0;
 
       //  self::$quantidadeContasClasse++;
@@ -56,33 +55,17 @@ class Conta{
         $contaDestino->depositar($valoraTransferir);
         
     }
- 
-    public function getCpfTitular():string
-    {
-       return $this->cpfTitular;
+
+    public function getNome(): string {
+        return $this->titular->getNome();
     }
 
-    
-    public function getNomeTitular():string
-    {
-       return $this->nomeTitular;
+    public function getCpf(): string {
+        return $this->titular->getCpf();
     }
 
-    // Regra de código: Todos os métodos são definidos com verbos no infinitivo.
-
-    // Função interna, então é um método privado!! 
-
-    private function validarNomeTitular($nomeNovoCadastro)
-    {
-        if(strlen($nomeNovoCadastro) < 5){
-            echo "O nome do novo Titular precisa de pelo menos 5 caracteres.".PHP_EOL;
-            exit;
-        }
+    public function getSaldo(): float {
+        return $this->saldo;
     }
-
-  //  public static function getquantidadeContasClasse():int
- //   {
-  //      return self::$quantidadeContasClasse;
- //   }
 
 }
