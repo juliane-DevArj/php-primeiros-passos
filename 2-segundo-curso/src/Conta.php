@@ -56,15 +56,15 @@ class Conta{
         
     }
 
-    public function getNome(): string {
-        return $this->titular->getNome();
+    public function recuperaNome(): string {
+        return $this->titular->recuperaNome();
     }
 
-    public function getCpf(): string {
-        return $this->titular->getCpf();
+    public function recuperaCpf(): string {
+        return $this->titular->recuperaCpf();
     }
 
-    public function getSaldo(): float {
+    public function recuperaSaldo(): float {
         return $this->saldo;
     }
 

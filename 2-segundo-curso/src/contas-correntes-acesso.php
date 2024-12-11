@@ -1,7 +1,9 @@
 <?php
 
+require_once 'Pessoa.php';
 require_once 'Endereco.php';
 require_once 'Titular.php';
+require_once 'Funcionario.php';
 require_once 'Conta.php';
 
 
@@ -19,9 +21,12 @@ $contaJu->depositar(100);
 $contaJu->transferir(50,$contaGabi);
 
 
-echo "Nome do titular da primeira conta ". $contaJu->getNome() .PHP_EOL;
-echo "Nome do titular da segunda conta ".$contaGabi->getNome().PHP_EOL;
+echo "Nome do titular da primeira conta ". $contaJu->recuperaNome() .PHP_EOL;
+echo "Nome do titular da segunda conta ".$contaGabi->recuperaNome().PHP_EOL;
 
-echo "Cpf do titular da primeira conta ".$contaJu->getCpf().PHP_EOL;
-echo "Cpf do titular da segunda conta ".$contaGabi->getCpf().PHP_EOL; 
+echo "Cpf do titular da primeira conta ".$contaJu->recuperaCpf().PHP_EOL;
+echo "Cpf do titular da segunda conta ".$contaGabi->recuperaCpf().PHP_EOL; 
 
+
+$funcionario = new Funcionario("123.456.789-00", "Juliane Beda", "Desenvolvedora");
+echo $funcionario->recuperaCargo().PHP_EOL; // Deve exibir "Desenvolvedora"
