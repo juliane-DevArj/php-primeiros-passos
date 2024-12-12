@@ -1,7 +1,13 @@
 <?php
 
-require_once 'Pessoa.php';
-require_once 'Endereco.php';
+namespace Modelo\Conta;
+
+require_once __DIR__ . '/../Pessoa.php';
+require_once __DIR__ .'/../Endereco.php';
+
+use Modelo\Pessoa; 
+use Modelo\Endereco; 
+//------------------------------- ACIMA -- > REFERENCIA DE LOCAIS DE ARQUIVOS
 
 //Titular "é uma" pessoa! Relação: HERANÇA
 class Titular extends Pessoa {

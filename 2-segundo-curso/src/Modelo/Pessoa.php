@@ -1,5 +1,7 @@
 <?php
 
+namespace Modelo;
+// Isso é uma superClasse!! 
 class Pessoa{
 
     protected string $cpf;

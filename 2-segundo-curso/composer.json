@@ -1,0 +1,10 @@
+{
+    "name": "julia/2-segundo-curso",
+    "description": "Projeto de aprendizado de PHP com classes e namespaces.",
+    "autoload": {
+        "psr-4": {
+            "Julia\\2SegundoCurso\\": "src/"
+        }
+    },
+    "require": {}
+}

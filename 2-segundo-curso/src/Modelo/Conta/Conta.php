@@ -1,7 +1,12 @@
 <?php
 
-require_once 'Titular.php';
-require_once 'Endereco.php';
+namespace Modelo\Conta;
+
+use Modelo\Conta\Titular; 
+
+require_once __DIR__ . '/Titular.php';
+require_once __DIR__ . '/../Endereco.php';
+//------------------------------- ACIMA -- > REFERENCIA DE LOCAIS DE ARQUIVOS
 
 class Conta{
 
@@ -9,7 +14,6 @@ class Conta{
     private Titular $titular;
     private float $saldo;
     //Atributo da Classe
-    
 
     //Métodos de uma conta
     public function __construct(Titular $titular)

@@ -1,11 +1,15 @@
 <?php
 
-require_once 'Pessoa.php';
-require_once 'Endereco.php';
-require_once 'Titular.php';
-require_once 'Funcionario.php';
-require_once 'Conta.php';
+require_once 'src/Modelo/Pessoa.php';
+require_once 'src/Modelo/Endereco.php';
+require_once 'src/Modelo/Conta/Titular.php';
+require_once 'src/Modelo/Funcionario.php';
+require_once 'src/Modelo/Conta/Conta.php';
 
+use Modelo\Endereco;
+use Modelo\Conta\Titular;
+use Modelo\Funcionario;
+use Modelo\Conta\Conta;
 
 // Primeira instância de uma nova classe
 $enderecoJu = new Endereco("São José dos Campos","Thunder Garden","Egle Carnevali","285");
